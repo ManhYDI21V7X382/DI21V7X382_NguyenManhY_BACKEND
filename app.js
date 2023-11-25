@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const contactsRouter = require("./routes/contact.route")
+
 const ApiError =require("./api-error");
 
 const app = express();
@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
     res.json({message: "Xin chao den ung dung Quan ly danh ba!"});
 });
 
-app.use("/api/contacts", contactsRouter)
+
 
 app.use((req, res, next) => {
     return next(new ApiError(404, "Resource not found"));
